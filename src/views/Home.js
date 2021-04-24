@@ -18,12 +18,19 @@ class Home extends Component {
     pushQuery () {
         console.log(this.props.history)
     }
+
+    dispatchAction () {
+        this.props.dispatch({
+            type: 'INCREMENT'
+          })
+    }
+
     render() {
         const counter = this.props.state
         return (
             <div>
                 {counter}
-                <button onClick={this.pushQuery.bind(this)}>+</button>
+                <button onClick={this.dispatchAction.bind(this)}>+</button>
                 {this.state.loading}
                 <Greeting loading={this.state.loading}></Greeting>
             </div>
@@ -38,5 +45,5 @@ const mapStateToProps = function (state) {
   }
 }
 
-// export default connect(mapStateToProps)(Home)
-export default withRouter(Home)
+export default connect(mapStateToProps)(Home)
+// export default withRouter(Home)
