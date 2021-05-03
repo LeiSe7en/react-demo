@@ -4,6 +4,7 @@ import PlayGround from './views/PlayGround'
 import { createStore } from 'redux'
 import RootReducer from './reducers'
 import { Provider } from 'react-redux'
+import 'antd/dist/antd.css'
 
 const store = createStore(
   RootReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
